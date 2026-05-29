@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://c4xodmpfhqiys"]
+
+[ext_resource type="Script" uid="uid://bkid4xywkia7b" path="res://entities/player/player_manager.gd" id="1_sglur"]
+[ext_resource type="Script" uid="uid://clnscjc6r6mh0" path="res://entities/player/player_controller.gd" id="3_bls4j"]
+[ext_resource type="Script" uid="uid://cwwp0cpr0isib" path="res://entities/entity_controller.gd" id="3_fkugw"]
+[ext_resource type="Script" uid="uid://c2hgqafl65b8e" path="res://entities/player/camera_controller.gd" id="4_bls4j"]
+[ext_resource type="Script" uid="uid://der6reb2vxqju" path="res://entities/entity.gd" id="5_8fjmc"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_bls4j"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sglur"]
+radius = 0.3935547
+
+[node name="Player" type="CharacterBody3D" unique_id=801384282]
+script = ExtResource("1_sglur")
+
+[node name="PlayerController" type="Node" parent="." unique_id=1860807068]
+script = ExtResource("3_bls4j")
+metadata/_custom_type_script = "uid://clnscjc6r6mh0"
+
+[node name="Camera" type="Camera3D" parent="." unique_id=1663653683]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.58575964, -0.26002038)
+current = true
+script = ExtResource("4_bls4j")
+_mouse_sensitivity = 0.002
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1520399595]
+transform = Transform3D(0.75, 0, 0, 0, 1, 0, 0, 0, 0.75, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_bls4j")
+
+[node name="Collider" type="CollisionShape3D" parent="." unique_id=883480488]
+shape = SubResource("CapsuleShape3D_sglur")
+
+[node name="Entity" type="Node" parent="." unique_id=333702638]
+script = ExtResource("5_8fjmc")
+metadata/_custom_type_script = "uid://der6reb2vxqju"
+
+[node name="Controller" type="Node" parent="Entity" unique_id=12516316]
+script = ExtResource("3_fkugw")
+_air_move_scale = 0.3
+metadata/_custom_type_script = "uid://cwwp0cpr0isib"

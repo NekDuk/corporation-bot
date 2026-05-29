@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://g5ld5mdo3e3v"]
+
+[ext_resource type="Script" uid="uid://cwwp0cpr0isib" path="res://entities/entity_controller.gd" id="1_3wc1p"]
+[ext_resource type="Script" uid="uid://der6reb2vxqju" path="res://entities/entity.gd" id="1_mw3h2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v2en0"]
+radius = 0.4
+
+[node name="Humanoid" type="CharacterBody3D" unique_id=486677901]
+script = ExtResource("1_mw3h2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2036310336]
+shape = SubResource("CapsuleShape3D_v2en0")
+
+[node name="Controller" type="Node" parent="." unique_id=1127157148]
+script = ExtResource("1_3wc1p")
+metadata/_custom_type_script = "uid://cwwp0cpr0isib"
