@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c4xodmpfhqiys" path="res://entities/player/player.tscn" id="1_5jv1i"]
 [ext_resource type="ArrayMesh" uid="uid://bh0shkaidgqio" path="res://assets/environment/testing/testing_platform.obj" id="2_fgss6"]
 [ext_resource type="Texture2D" uid="uid://b0o2g2inbsto" path="res://assets/environment/testing/one_meter_tile.png" id="3_ccd7m"]
+[ext_resource type="PackedScene" uid="uid://g5ld5mdo3e3v" path="res://entities/types/humanoid.tscn" id="4_e68cy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e68cy"]
 albedo_texture = ExtResource("3_ccd7m")
@@ -32,3 +33,6 @@ shape = SubResource("ConcavePolygonShape3D_ccd7m")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1565845298]
 transform = Transform3D(0.9406085, 0.27490285, 0.19920862, 0, -0.58678234, 0.8097447, 0.33949322, -0.76165277, -0.55193245, 0, 0, 0)
 light_energy = 0.6
+
+[node name="Humanoid" parent="." unique_id=486677901 instance=ExtResource("4_e68cy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25261354, 0)

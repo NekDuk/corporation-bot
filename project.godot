@@ -52,6 +52,12 @@ move_sprint={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="Environment"
+3d_physics/layer_3="Body Parts"
+3d_physics/layer_4="Critical Parts"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
